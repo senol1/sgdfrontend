@@ -12,6 +12,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {BreadcrumbsComponent} from './layout/admin/breadcrumbs/breadcrumbs.component';
 import {TitleComponent} from './layout/admin/title/title.component';
 import {AuthComponent} from './layout/auth/auth.component';
+import {WithBgImageComponent} from './pages/authentication/login/with-bg-image/with-bg-image.component';
+import {AuthServiceService} from './auth-service.service';
+import { AuthGuard} from './auth.guard';
+import {HttpModule} from '@angular/http';
 
 
 @NgModule({
@@ -20,16 +24,18 @@ import {AuthComponent} from './layout/auth/auth.component';
     AdminComponent,
     BreadcrumbsComponent,
     TitleComponent,
-    AuthComponent
+    AuthComponent,
+    WithBgImageComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(AppRoutes),
     ClickOutsideModule,
-    SharedModule
+    SharedModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [AuthServiceService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

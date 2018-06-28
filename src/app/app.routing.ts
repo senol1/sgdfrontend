@@ -1,11 +1,14 @@
 import {Routes} from '@angular/router';
 import {AdminComponent} from './layout/admin/admin.component';
 import {AuthComponent} from './layout/auth/auth.component';
+import {WithBgImageComponent} from './pages/authentication/login/with-bg-image/with-bg-image.component';
+import {AuthGuard} from './auth.guard';
 
 export const AppRoutes: Routes = [
   {
     path: '',
     component: AdminComponent,
+    // canActivate: [AuthGuard],
     children: [
       {
         path: '',
@@ -85,5 +88,8 @@ export const AppRoutes: Routes = [
         loadChildren: './pages/maintenance/offline-ui/offline-ui.module#OfflineUiModule'
       }
     ]
+  }, {
+    path: 'login',
+    component: WithBgImageComponent
   }
 ];
