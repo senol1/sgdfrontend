@@ -17,7 +17,7 @@ export class AuthGuard implements CanActivate {
         return true;
     }
 
-    console.log( JSON.parse(localStorage.getItem('currentUser')).username);
+    // console.log( JSON.parse(localStorage.getItem('currentUser')).username);
 
     // not  logged in so redirect to login page
     this.router.navigate(['/login']);

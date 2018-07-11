@@ -13,9 +13,10 @@ import {BreadcrumbsComponent} from './layout/admin/breadcrumbs/breadcrumbs.compo
 import {TitleComponent} from './layout/admin/title/title.component';
 import {AuthComponent} from './layout/auth/auth.component';
 import {WithBgImageComponent} from './pages/authentication/login/with-bg-image/with-bg-image.component';
-import {AuthServiceService} from './auth-service.service';
 import { AuthGuard} from './auth.guard';
 import {HttpModule} from '@angular/http';
+import {AuthService} from './auth.service';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -29,13 +30,14 @@ import {HttpModule} from '@angular/http';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(AppRoutes),
     ClickOutsideModule,
     SharedModule,
     HttpModule
   ],
-  providers: [AuthServiceService, AuthGuard],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

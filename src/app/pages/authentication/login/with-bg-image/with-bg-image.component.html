@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="login-card card-body auth-body">
-          <form class="md-float-material">
+          <form class="md-float-material" (submit)="login($event)">
             <div class="text-center">
               <img src="assets/images/auth/logo-dark.png" alt="logo.png">
             </div>
@@ -14,16 +14,17 @@
                 </div>
               </div>
               <hr/>
+              <div *ngIf="error" class="alert alert-danger">{{error}}</div>
               <div class="input-group">
-                <input type="email" class="form-control" placeholder="Nom d'utilisateur">
+                <input type="text" name="username" class="form-control" placeholder="Nom d'utilisateur" [(ngModel)]="username">
                 <span class="md-line"></span>
               </div>
               <div class="input-group">
-                <input type="password" class="form-control" placeholder="Mot de passe">
+                <input type="password" name="password" class="form-control" placeholder="Mot de passe" [(ngModel)]="password">
                 <span class="md-line"></span>
               </div>
               <div class="row m-t-25 text-left">
-                <div class="col-sm-6nb col-xs-12">
+                <div class="col-sm-6 col-xs-12">
                   <div class="checkbox-fade fade-in-primary">
                     <label>
                       <input type="checkbox" value="">
@@ -38,7 +39,7 @@
               </div>
               <div class="row m-t-30">
                 <div class="col-md-12">
-                  <button type="button" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Se connecter</button>
+                  <button type="submit" class="btn btn-primary btn-md btn-block waves-effect text-center m-b-20">Se connecter</button>
                 </div>
               </div>
               <hr/>

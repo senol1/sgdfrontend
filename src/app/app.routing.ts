@@ -8,7 +8,6 @@ export const AppRoutes: Routes = [
   {
     path: '',
     component: AdminComponent,
-    // canActivate: [AuthGuard],
     children: [
       {
         path: '',
@@ -75,7 +74,8 @@ export const AppRoutes: Routes = [
         path: 'simple-page',
         loadChildren: './pages/simple-page/simple-page.module#SimplePageModule'
       }
-    ]
+    ],
+    canActivate: [AuthGuard]
   }, {
     path: '',
     component: AuthComponent,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {AuthServiceService} from '../../../../auth-service.service';
+import {AuthService} from '../../../../auth.service';
 
 @Component({
   selector: 'app-with-bg-image',
@@ -13,13 +13,12 @@ export class WithBgImageComponent implements OnInit {
   password: string;
   error: string;
 
-  constructor(private router: Router, /*private authentifiationService: AuthServiceService*/) { }
+  constructor(private router: Router, private authentifiationService: AuthService) { }
 
   ngOnInit() {
-    // this.authentifiationService.logout();
+     this.authentifiationService.logout();
   }
 
-  /*
   login(e) {
 
 
@@ -32,6 +31,5 @@ export class WithBgImageComponent implements OnInit {
         this.router.navigate(['/dashboard/default']);
       }, loginError => this.error = loginError.message +  ' : Vérifier votre nom d\'utilisateur ou votre mot de passe') ;
   }
-   */
 
 }
