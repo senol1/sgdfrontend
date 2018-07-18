@@ -16,7 +16,7 @@ import {WithBgImageComponent} from './pages/authentication/login/with-bg-image/w
 import { AuthGuard} from './auth.guard';
 import {HttpModule} from '@angular/http';
 import {AuthService} from './auth.service';
-import {FormsModule} from "@angular/forms";
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({

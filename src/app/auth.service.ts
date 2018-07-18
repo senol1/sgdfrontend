@@ -21,13 +21,13 @@ export class AuthService {
 
   login(username: string, password: string): Observable<boolean> {
     let headers = new Headers();
-    headers.append('content-type', 'application/x-www-from-urlencoded');
+    headers.append('Content-Type', 'application/json');
     let body = new URLSearchParams();
     body.set('username', username);
     body.set('password', password);
 
 
-    return this.http.post(this.url, body , {headers: headers})
+    return this.http.post(this.url, body, {headers: headers})
       .map((response: Response) => {
         // login successful if there's a jwt token in the response
         const token = response.json() && response.json().token;
